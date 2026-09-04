@@ -1,0 +1,86 @@
+# ------------------------------
+# OS / Editor / Environment
+# ------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ------------------------------
+# Python / Virtual Environments
+# ------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+env/
+*.log
+
+# ------------------------------
+# Jupyter / Notebooks
+# ------------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+*.nbconvert/
+
+# ------------------------------
+# Data / Datasets
+# ------------------------------
+data/
+*.csv
+*.tsv
+*.json
+*.xml
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.joblib
+
+# ------------------------------
+# Models / Checkpoints
+# ------------------------------
+models/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.pb
+*.tflite
+*.h5
+
+# ------------------------------
+# Experiment Tracking
+# ------------------------------
+runs/
+logs/
+wandb/
+mlruns/
+tensorboard/
+
+# ------------------------------
+# Build / Packaging
+# ------------------------------
+dist/
+build/
+*.egg
+.eggs/
+*.tar.gz
+
+# ------------------------------
+# Misc
+# ------------------------------
+*.tmp
+*.bak
+*.cache/
+.cache/
