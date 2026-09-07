@@ -1,95 +1,4 @@
-"""
-STEP 15 — UNIFIED CROSS-MODEL SHAP CONSISTENCY ANALYSIS
 
-Purpose
--------
-Recalculate cross-model SHAP explanation consistency using ONE common
-SHAP methodology for all four models:
-
-    RF
-    XGB
-    LGBM
-    MLP
-
-Why this analysis is required
------------------------------
-The previous cross-model SHAP analysis used:
-    - TreeExplainer for RF
-    - TreeExplainer for LGBM
-    - fallback TreeExplainer for XGB
-    - permutation SHAP for MLP
-
-Because the models were not all explained using the same SHAP framework
-and output scale, direct cross-model comparisons were not fully
-methodologically consistent.
-
-This script therefore uses:
-
-    shap.Explainer(
-        prediction_function,
-        background,
-        algorithm="permutation"
-    )
-
-for ALL FOUR MODELS.
-
-The prediction function returns the positive-class probability.
-
-Experimental controls
----------------------
-- Same independent test set
-- Same 300 SHAP observations
-- Same 100 background observations
-- Same feature ordering
-- Same prediction output: P(defective)
-- Same permutation SHAP methodology
-- Test set is never used for model fitting
-
-Global metrics
---------------
-- Spearman correlation of mean absolute SHAP importance
-- Cosine similarity of mean absolute SHAP importance
-
-Local metrics
---------------
-- Per-observation Spearman correlation
-- Per-observation cosine similarity
-
-Model pairs
------------
-RF-XGB
-RF-LGBM
-RF-MLP
-XGB-LGBM
-XGB-MLP
-LGBM-MLP
-
-Outputs
--------
-data/results/unified_cross_model_shap/
-
-    unified_global_shap_consistency.csv
-    unified_local_shap_consistency.csv
-    unified_cross_model_summary.csv
-    unified_cross_model_metadata.json
-    unified_cross_model_report.txt
-
-figures/unified_cross_model_shap/
-
-    unified_global_shap_importance.png
-    unified_global_consistency_heatmap.png
-    unified_local_spearman_boxplot.png
-    unified_local_cosine_boxplot.png
-
-IMPORTANT
----------
-This script is for CROSS-MODEL explanation consistency.
-
-The intra-model stability results from Step 12/13 remain separate.
-
-Do NOT combine IMSI and cross-model consistency into a final SSI until
-both analyses have been reviewed.
-"""
 
 import os
 import json
@@ -1361,7 +1270,7 @@ for i in range(len(model_names)):
             text_color = 'white'
         else:
             text_color = 'black'
-        
+
         plt.text(
             j,
             i,
