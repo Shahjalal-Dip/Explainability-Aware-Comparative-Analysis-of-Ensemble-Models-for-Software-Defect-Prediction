@@ -1,0 +1,77 @@
+STEP 17 — CROSS-MODEL EXPLANATION CONSISTENCY INDEX (CECI)
+================================================================================
+
+Methodology
+--------------------------------------------------------------------------------
+SHAP method: Unified permutation SHAP
+Prediction output: Positive-class probability
+SHAP observations: 300
+Background observations: 100
+Model pairs: 6
+Metrics: Global Spearman, Global Cosine, Local Spearman, Local Cosine
+Normalization: (score + 1) / 2
+Weighting: Equal weighting
+
+Overall CECI
+--------------------------------------------------------------------------------
+Global CECI = 0.841054
+Local CECI = 0.710699
+Overall CECI = 0.775876
+Overall CECI (%) = 77.59%
+
+Pairwise Results
+--------------------------------------------------------------------------------
+1. RF-XGB
+   Global Spearman: 0.874026
+   Global Cosine: 0.865080
+   Local Spearman: 0.588424
+   Local Cosine: 0.683703
+   Global component: 0.934776
+   Local component: 0.818032
+   Pairwise CECI: 0.876404
+
+2. XGB-LGBM
+   Global Spearman: 0.832468
+   Global Cosine: 0.911002
+   Local Spearman: 0.443165
+   Local Cosine: 0.635814
+   Global component: 0.935867
+   Local component: 0.769745
+   Pairwise CECI: 0.852806
+
+3. RF-LGBM
+   Global Spearman: 0.757143
+   Global Cosine: 0.877366
+   Local Spearman: 0.457359
+   Local Cosine: 0.591000
+   Global component: 0.908627
+   Local component: 0.762090
+   Pairwise CECI: 0.835359
+
+4. LGBM-MLP
+   Global Spearman: 0.341558
+   Global Cosine: 0.810274
+   Local Spearman: 0.107857
+   Local Cosine: 0.442494
+   Global component: 0.787958
+   Local component: 0.637588
+   Pairwise CECI: 0.712773
+
+5. XGB-MLP
+   Global Spearman: 0.332468
+   Global Cosine: 0.620469
+   Local Spearman: 0.209095
+   Local Cosine: 0.385558
+   Global component: 0.738234
+   Local component: 0.648663
+   Pairwise CECI: 0.693449
+
+6. RF-MLP
+   Global Spearman: 0.259740
+   Global Cosine: 0.703708
+   Local Spearman: 0.186182
+   Local Cosine: 0.326114
+   Global component: 0.740862
+   Local component: 0.628074
+   Pairwise CECI: 0.684468
+

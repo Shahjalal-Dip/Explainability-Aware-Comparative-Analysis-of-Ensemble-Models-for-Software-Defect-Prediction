@@ -1,0 +1,46 @@
+STEP 11B — RF vs RF-RID EXPLANATION COMPARISON
+================================================================================
+
+Full RF features: 21
+RF-RID features: 21
+Removed features: 0
+Common features: 21
+
+GLOBAL EXPLANATION SIMILARITY
+--------------------------------------------------------------------------------
+Spearman rho: 0.159591
+Spearman p-value: 4.895634e-01
+Cosine similarity: 0.522778
+
+LOCAL EXPLANATION SIMILARITY
+--------------------------------------------------------------------------------
+  Comparison  Local_Spearman_mean  Local_Spearman_std  Local_Spearman_median  Local_Cosine_mean  Local_Cosine_std  Local_Cosine_median
+RF vs RF-RID             0.227466            0.210003               0.240523            0.19612          0.220167             0.207364
+
+FEATURE RANKING
+--------------------------------------------------------------------------------
+          Feature  RF_Rank  RF_Mean_Absolute_SHAP  RF_RID_Rank  RF_RID_Mean_Absolute_SHAP  Rank_Change
+              loc      1.0               0.037960          8.0                   0.006633          7.0
+             v(g)      5.0               0.013276          1.0                   0.021373         -4.0
+            ev(g)      3.0               0.020274          2.0                   0.012011         -1.0
+            iv(g)      2.0               0.029062         12.0                   0.000001         10.0
+                n     16.0               0.004836          4.0                   0.009745        -12.0
+                v     15.0               0.005262          3.0                   0.011177        -12.0
+                l     13.0               0.007124         11.0                   0.000337         -2.0
+                d      9.0               0.008745          7.0                   0.006729         -2.0
+                i      8.0               0.010480          6.0                   0.009288         -2.0
+                e     17.0               0.004776          9.0                   0.001069         -8.0
+                b     14.0               0.007013         10.0                   0.000694         -4.0
+                t     18.0               0.004752          5.0                   0.009645        -13.0
+           lOCode     11.0               0.007543         17.0                   0.000000          6.0
+        lOComment     20.0               0.003742         17.0                   0.000000         -3.0
+          lOBlank      4.0               0.018477         17.0                   0.000000         13.0
+locCodeAndComment     21.0               0.002505         17.0                   0.000000         -4.0
+          uniq_Op     12.0               0.007344         17.0                   0.000000          5.0
+        uniq_Opnd      7.0               0.010780         17.0                   0.000000         10.0
+         total_Op     10.0               0.008502         17.0                   0.000000          7.0
+       total_Opnd     19.0               0.004431         17.0                   0.000000         -2.0
+      branchCount      6.0               0.010799         17.0                   0.000000         11.0
+
+REMOVED FEATURES
+--------------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+{
+    "dataset_file": "jm1.csv",
+    "number_of_rows": 13204,
+    "number_of_columns": 22,
+    "duplicate_rows": 4296,
+    "duplicate_percentage": 32.53559527415935,
+    "target_column": "defects",
+    "numeric_columns": 21,
+    "non_numeric_columns": 1,
+    "constant_columns": [],
+    "memory_usage_mb": 2.1282272338867188
+}

@@ -1,0 +1,22 @@
+{
+    "dataset": "NASA JM1",
+    "test_file": "E:\\Programming\\Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction\\data\\processed\\JM1\\JM1_test.csv",
+    "test_samples": 1782,
+    "test_features": 21,
+    "target": "defects",
+    "class_0_count": 1381,
+    "class_1_count": 401,
+    "positive_class_prevalence": 0.2250280583613917,
+    "smote_applied_to_test": false,
+    "retrained_on_test": false,
+    "hyperparameter_tuning_on_test": false,
+    "threshold_tuning": false,
+    "classification_threshold": 0.5,
+    "models": [
+        "RF",
+        "XGB",
+        "LGBM",
+        "MLP"
+    ],
+    "random_state": 42
+}

@@ -1,0 +1,5 @@
+Component,Normalized_Score,Weight
+Global Spearman,0.783116883116883,0.25
+Global Cosine,0.8989915801490795,0.25
+Local Spearman,0.6660068542568542,0.25
+Local Cosine,0.755390247894824,0.25

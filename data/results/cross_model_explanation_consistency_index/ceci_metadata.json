@@ -1,0 +1,31 @@
+{
+    "analysis": "Cross-Model Explanation Consistency Index",
+    "dataset": "NASA JM1",
+    "models": [
+        "RF",
+        "XGB",
+        "LGBM",
+        "MLP"
+    ],
+    "number_model_pairs": 6,
+    "shap_method": "Unified permutation SHAP",
+    "prediction_output": "positive-class probability",
+    "shap_observations": 300,
+    "background_observations": 100,
+    "metrics": [
+        "Global Spearman",
+        "Global Cosine",
+        "Local Spearman",
+        "Local Cosine"
+    ],
+    "normalization": "score_normalized = (score + 1) / 2",
+    "weighting": {
+        "global": 0.5,
+        "local": 0.5,
+        "each_metric": 0.25
+    },
+    "global_ceci": 0.8410542316329812,
+    "local_ceci": 0.7106985510758391,
+    "overall_ceci": 0.7758763913544102,
+    "overall_ceci_percentage": 77.58763913544102
+}

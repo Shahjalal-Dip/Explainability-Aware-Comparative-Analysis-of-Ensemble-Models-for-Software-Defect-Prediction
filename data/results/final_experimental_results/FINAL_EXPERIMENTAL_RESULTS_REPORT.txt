@@ -1,0 +1,125 @@
+================================================================================
+STEP 19 — FINAL EXPERIMENTAL RESULTS REPORT
+Evaluating SHAP Explanation Consistency in Ensemble Models
+for Software Defect Prediction (NASA JM1)
+================================================================================
+
+This report consolidates results already produced by Steps 1-18. No models were retrained and no SHAP values were recomputed.
+
+--------------------------------------------------------------------------------
+A. PREDICTIVE PERFORMANCE (CV, tuned models) + INDEPENDENT TEST SET
+--------------------------------------------------------------------------------
+Model  CV_Rank  CV_F1_Mean  CV_F1_STD  CV_MCC_Mean  CV_MCC_STD  CV_ROC_AUC_Mean  CV_ROC_AUC_STD  CV_PR_AUC_Mean  CV_PR_AUC_STD Selected_Training_Strategy  Test_Rank  Test_Accuracy  Test_Precision  Test_Recall  Test_Specificity  Test_F1  Test_MCC  Test_ROC_AUC  Test_PR_AUC  Test_TN  Test_FP  Test_FN  Test_TP
+   RF        1    0.430808   0.015055     0.265433    0.023503         0.695298        0.010116        0.426614       0.020172                      SMOTE          2       0.748036        0.439086     0.431421          0.839971 0.435220  0.273101      0.707301     0.420506     1160      221      228      173
+  XGB        2    0.429207   0.026815     0.242827    0.038894         0.679608        0.014728        0.411797       0.022703                      SMOTE          1       0.725589        0.408714     0.491272          0.793628 0.446206  0.267834      0.693973     0.406110     1096      285      204      197
+  MLP        3    0.420362   0.025695     0.228167    0.036475         0.657362        0.016118        0.399034       0.028970                      SMOTE          3       0.716049        0.385120     0.438903          0.796524 0.410256  0.225143      0.673638     0.404772     1100      281      225      176
+ LGBM        4    0.393795   0.025830     0.268080    0.027806         0.689554        0.012161        0.423282       0.023465                      SMOTE          4       0.762626        0.459559     0.311721          0.893555 0.371471  0.238361      0.687812     0.413636     1234      147      276      125
+
+--------------------------------------------------------------------------------
+B. CROSS-MODEL SHAP CONSISTENCY (GLOBAL + LOCAL)
+--------------------------------------------------------------------------------
+Model_A Model_B Model_Pair  Global_Spearman  Global_Cosine  Number_of_Features  Local_Spearman_Mean  Local_Spearman_STD  Local_Spearman_Median  Local_Spearman_Min  Local_Spearman_Max  Local_Cosine_Mean  Local_Cosine_STD  Local_Cosine_Median  Local_Cosine_Min  Local_Cosine_Max  N_Observations  Wilcoxon_Spearman_Statistic  Wilcoxon_Spearman_Raw_P  Wilcoxon_Spearman_Holm_P  Significant_After_Holm
+     RF     XGB     RF-XGB         0.874026       0.865080                  21             0.588424            0.191537               0.611688           -0.055844            0.933766           0.683703          0.224058             0.759740         -0.106343          0.954647             300                          3.0             6.265490e-51              3.759294e-50                    True
+    XGB    LGBM   XGB-LGBM         0.832468       0.911002                  21             0.443165            0.231424               0.450649           -0.198701            0.894805           0.635814          0.310544             0.716227         -0.663840          0.988697             300                        260.0             8.123352e-50              4.061676e-49                    True
+     RF    LGBM    RF-LGBM         0.757143       0.877366                  21             0.457359            0.242533               0.488961           -0.285714            0.883117           0.591000          0.249078             0.646612         -0.407455          0.904955             300                        325.5             1.553377e-49              6.213508e-49                    True
+   LGBM     MLP   LGBM-MLP         0.341558       0.810274                  21             0.107857            0.227021               0.137662           -0.654545            0.571429           0.442494          0.358859             0.574567         -0.735902          0.874978             300                      10690.5             2.716493e-15              2.716493e-15                    True
+    XGB     MLP    XGB-MLP         0.332468       0.620469                  21             0.209095            0.199487               0.229870           -0.702597            0.629870           0.385558          0.326676             0.504024         -0.594291          0.855397             300                       3459.0             5.053951e-37              1.516185e-36                    True
+     RF     MLP     RF-MLP         0.259740       0.703708                  21             0.186182            0.185852               0.192208           -0.335065            0.703896           0.326114          0.222703             0.332152         -0.634712          0.771398             300                       3685.5             5.492959e-36              1.098592e-35                    True
+
+--------------------------------------------------------------------------------
+C. CROSS-MODEL EXPLANATION CONSISTENCY INDEX (CECI)
+--------------------------------------------------------------------------------
+Overall CECI = 0.775876 (77.59%)
+Global CECI  = 0.841054
+Local CECI   = 0.710699
+
+Pairwise CECI ranking:
+Model_Pair  Pairwise_CECI  CECI_Rank
+    RF-XGB       0.876404          1
+  XGB-LGBM       0.852806          2
+   RF-LGBM       0.835359          3
+  LGBM-MLP       0.712773          4
+   XGB-MLP       0.693449          5
+    RF-MLP       0.684468          6
+
+--------------------------------------------------------------------------------
+D. ROBUSTNESS (5,000-SAMPLE BOOTSTRAP)
+--------------------------------------------------------------------------------
+Bootstrap mean = 0.775862   Bootstrap SD = 0.001055
+95% CI = [0.773788, 0.777865]
+Interpretation: Very high bootstrap stability
+
+Leave-one-pair-out sensitivity:
+Removed_Model_Pair  Remaining_Model_Pairs  Leave_One_Out_Global_CECI  Leave_One_Out_Local_CECI  Leave_One_Out_CECI  Difference_From_Full_CECI  Absolute_Difference
+            RF-XGB                      5                   0.822310                  0.689232            0.755771                  -0.020106             0.020106
+           RF-LGBM                      5                   0.827540                  0.700420            0.763980                  -0.011896             0.011896
+            RF-MLP                      5                   0.861093                  0.727223            0.794158                   0.018282             0.018282
+          XGB-LGBM                      5                   0.822092                  0.698889            0.760490                  -0.015386             0.015386
+           XGB-MLP                      5                   0.861618                  0.723106            0.792362                   0.016486             0.016486
+          LGBM-MLP                      5                   0.851673                  0.725321            0.788497                   0.012621             0.012621
+
+--------------------------------------------------------------------------------
+E. RESEARCH FINDINGS
+--------------------------------------------------------------------------------
+================================================================================
+FINAL RESEARCH FINDINGS
+Evaluating SHAP Explanation Consistency in Ensemble Models
+for Software Defect Prediction (NASA JM1)
+================================================================================
+
+1. PREDICTIVE PERFORMANCE
+--------------------------------------------------------------------------------
+Best model by CV F1: RF
+Weakest model by CV F1: LGBM
+Best model on the independent test set (F1): XGB
+All four models (RF, XGB, LGBM, MLP) achieved broadly comparable but modest F1 scores, reflecting the class imbalance and inherent difficulty of the NASA JM1 defect-prediction task.
+
+2. SHAP EXPLANATION CONSISTENCY (CROSS-MODEL)
+--------------------------------------------------------------------------------
+Most consistent model pair: RF-XGB (Pairwise CECI = 0.876404)
+Least consistent model pair: RF-MLP (Pairwise CECI = 0.684468)
+
+Average pairwise CECI per model (higher = more consistent with others):
+  XGB   : 0.807553
+  LGBM  : 0.800313
+  RF    : 0.798744
+  MLP   : 0.696897
+
+Most consistent individual model overall: XGB
+Least consistent individual model overall: MLP
+The two tree-based gradient boosting / bagging models with similar inductive biases (RF and XGB) show the strongest agreement in SHAP explanations, while the MLP is consistently the outlier, producing the most divergent explanations against every other model.
+
+Weakest consistency component: Local Spearman (normalized score = 0.666007). Local, instance-level agreement is systematically weaker than global, population-level agreement, indicating that models rank feature importance similarly overall but disagree more on individual predictions.
+
+3. CROSS-MODEL EXPLANATION CONSISTENCY INDEX (CECI)
+--------------------------------------------------------------------------------
+Overall CECI: 0.775876 (77.59%)
+This indicates a moderately-high-to-high level of agreement between model explanations across all four models and all six pairwise comparisons, but not perfect consistency.
+
+4. ROBUSTNESS OF CECI (5,000-SAMPLE BOOTSTRAP)
+--------------------------------------------------------------------------------
+Bootstrap mean CECI: 0.775862
+Bootstrap SD: 0.001055
+95% Bootstrap CI: [0.773788, 0.777865]
+Interpretation: Very high bootstrap stability
+The extremely narrow confidence interval and low standard deviation show that the Overall CECI estimate is highly stable and not an artifact of the particular test-set sample used.
+
+5. STATISTICAL VALIDATION
+--------------------------------------------------------------------------------
+6 of 6 model pairs show local SHAP Spearman correlations significantly different from zero after Holm-Bonferroni correction (Wilcoxon signed-rank test, alpha = 0.05).
+This confirms that even the weakest pairwise agreement (RF-MLP) reflects a real, non-random relationship between explanations, rather than statistical noise.
+
+6. DOES PERFORMANCE AGREE WITH EXPLANATION CONSISTENCY?
+--------------------------------------------------------------------------------
+The best-performing model by CV F1 (RF) is NOT the same as the model with the most consistent explanations (XGB). Predictive performance and explanation consistency DIVERGE: a model can be competitive in predictive terms while still producing SHAP explanations that disagree more with its peers, and vice versa.
+
+7. IMPLICATIONS FOR SOFTWARE DEFECT PREDICTION
+--------------------------------------------------------------------------------
+- Practitioners choosing between RF, XGB, LGBM and MLP for defect prediction should not assume that model choice is explanation-neutral: swapping a tree ensemble for an MLP measurably changes which features SHAP identifies as important, especially at the level of individual modules/instances.
+- Global feature-importance rankings are comparatively stable across model families, so high-level guidance to developers (e.g., which code metrics matter most) is relatively robust to model choice.
+- Instance-level (local) explanations used to justify a decision about a single module are less reliable across model families and should be interpreted with more caution, ideally cross-checked against a second model when used to guide developer-facing decisions.
+- The high bootstrap stability of CECI suggests these consistency findings are not sample-specific and should generalize to other held-out data drawn from the same distribution.
+
+================================================================================
+END OF FINDINGS
+================================================================================

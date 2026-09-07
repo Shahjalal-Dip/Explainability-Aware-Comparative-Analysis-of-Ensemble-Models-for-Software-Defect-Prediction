@@ -1,0 +1,57 @@
+================================================================================
+RF vs RF-RID SHAP EXPLANATION COMPARISON
+================================================================================
+
+Experimental design
+----------------------------------------
+Test observations: 1782
+SHAP observations: 300
+Background observations: 100
+Full RF features: 21
+RF-RID features: 12
+RF-RID removed features: 9
+
+RF-RID selected features
+----------------------------------------
+- v(g)
+- ev(g)
+- iv(g)
+- l
+- d
+- i
+- t
+- lOComment
+- lOBlank
+- locCodeAndComment
+- uniq_Op
+- uniq_Opnd
+
+RF-RID removed features
+----------------------------------------
+- loc
+- n
+- v
+- e
+- b
+- lOCode
+- total_Op
+- total_Opnd
+- branchCount
+
+GLOBAL EXPLANATION CONSISTENCY
+----------------------------------------
+Spearman correlation: 0.979021
+Cosine similarity:    0.971806
+
+LOCAL EXPLANATION CONSISTENCY
+----------------------------------------
+Local Spearman mean:   0.850186
+Local Spearman std:    0.103122
+Local Spearman median: 0.874126
+Local Cosine mean:     0.905040
+Local Cosine std:      0.083621
+Local Cosine median:   0.926971
+
+IMPORTANT METHODOLOGICAL NOTE
+----------------------------------------
+The full RF SHAP explanations were restricted to the exact 12 features retained by RF-RID. The previous analysis that treated RF-RID as a 21-feature model must not be used for final reporting.

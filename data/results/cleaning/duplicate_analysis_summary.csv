@@ -1,0 +1,6 @@
+metric,value
+original_rows,13204.0
+exact_duplicate_rows,4296.0
+exact_duplicate_percentage,32.53559527415935
+rows_in_repeated_feature_groups,6589.0
+conflicting_feature_groups,88.0

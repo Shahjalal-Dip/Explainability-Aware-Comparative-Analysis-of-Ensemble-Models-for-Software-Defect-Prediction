@@ -1,0 +1,5 @@
+metric,value
+conflict_groups_before_cleaning_analysis,88
+conflict_rows_after_exact_duplicate_removal,176
+conflicts_removed,0
+conflicts_retained,176

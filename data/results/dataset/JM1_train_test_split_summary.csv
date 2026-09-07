@@ -1,0 +1,4 @@
+split,total_samples,non_defective,defective,non_defective_percentage,defective_percentage
+Full Dataset,8908,0,0,0.0,0.0
+Development,7126,0,0,0.0,0.0
+Test,1782,0,0,0.0,0.0

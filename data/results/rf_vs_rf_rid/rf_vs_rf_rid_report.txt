@@ -1,0 +1,65 @@
+STEP 11 — RF vs RF-RID
+================================================================================
+
+Experimental design
+--------------------------------------------------------------------------------
+Feature selection source: Development set only
+Pearson threshold: |r| >= 0.8
+VIF threshold: >= 10.0
+Random state: 42
+SMOTE applied to development data only
+Independent test set remained untouched during feature selection and training
+
+Feature reduction
+--------------------------------------------------------------------------------
+Original feature count: 21
+RF-RID feature count: 12
+Features removed: 9
+
+Selected features:
+  - v(g)
+  - ev(g)
+  - iv(g)
+  - l
+  - d
+  - i
+  - t
+  - lOComment
+  - lOBlank
+  - locCodeAndComment
+  - uniq_Op
+  - uniq_Opnd
+
+Removed features:
+  - loc
+  - n
+  - v
+  - e
+  - b
+  - lOCode
+  - total_Op
+  - total_Opnd
+  - branchCount
+
+Final multicollinearity status
+--------------------------------------------------------------------------------
+Maximum final VIF: 9.115523
+Maximum final |Pearson r|: 0.867474
+
+Independent test performance
+--------------------------------------------------------------------------------
+ Model  Accuracy  Precision   Recall  Specificity       F1      MCC  ROC_AUC   PR_AUC   TN  FP  FN  TP
+    RF  0.748036   0.439086 0.431421     0.839971 0.435220 0.273101 0.707301 0.420506 1160 221 228 173
+RF-RID  0.750842   0.445013 0.433915     0.842867 0.439394 0.279290 0.702602 0.410449 1164 217 227 174
+
+RF-RID minus RF
+--------------------------------------------------------------------------------
+     Metric       RF   RF_RID  RF_RID_minus_RF
+   Accuracy 0.748036 0.750842         0.002806
+  Precision 0.439086 0.445013         0.005926
+     Recall 0.431421 0.433915         0.002494
+Specificity 0.839971 0.842867         0.002896
+         F1 0.435220 0.439394         0.004174
+        MCC 0.273101 0.279290         0.006189
+    ROC_AUC 0.707301 0.702602        -0.004700
+     PR_AUC 0.420506 0.410449        -0.010056

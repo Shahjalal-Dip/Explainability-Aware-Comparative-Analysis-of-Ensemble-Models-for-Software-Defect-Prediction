@@ -1,0 +1,80 @@
+{
+    "experiment": "Unified Cross-Model SHAP Consistency",
+    "random_state": 42,
+    "test_dataset": "f:\\Machine Learning\\Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction\\data\\processed\\JM1\\JM1_test.csv",
+    "test_rows": 1782,
+    "number_of_features": 21,
+    "shap_sample_size": 300,
+    "background_size": 100,
+    "max_evals": 211,
+    "models": [
+        "RF",
+        "XGB",
+        "LGBM",
+        "MLP"
+    ],
+    "features": [
+        "loc",
+        "v(g)",
+        "ev(g)",
+        "iv(g)",
+        "n",
+        "v",
+        "l",
+        "d",
+        "i",
+        "e",
+        "b",
+        "t",
+        "lOCode",
+        "lOComment",
+        "lOBlank",
+        "locCodeAndComment",
+        "uniq_Op",
+        "uniq_Opnd",
+        "total_Op",
+        "total_Opnd",
+        "branchCount"
+    ],
+    "prediction_output": "positive_class_probability",
+    "shap_algorithm": "permutation",
+    "explainer_metadata": {
+        "RF": {
+            "algorithm": "permutation",
+            "prediction_output": "positive_class_probability",
+            "max_evals": 211,
+            "shap_shape": [
+                300,
+                21
+            ]
+        },
+        "XGB": {
+            "algorithm": "permutation",
+            "prediction_output": "positive_class_probability",
+            "max_evals": 211,
+            "shap_shape": [
+                300,
+                21
+            ]
+        },
+        "LGBM": {
+            "algorithm": "permutation",
+            "prediction_output": "positive_class_probability",
+            "max_evals": 211,
+            "shap_shape": [
+                300,
+                21
+            ]
+        },
+        "MLP": {
+            "algorithm": "permutation",
+            "prediction_output": "positive_class_probability",
+            "max_evals": 211,
+            "shap_shape": [
+                300,
+                21
+            ]
+        }
+    },
+    "methodological_note": "All four models were explained using the same permutation SHAP framework and the same positive-class probability prediction output. The same 300 test observations, 100 background observations, feature ordering, and evaluation budget were used across models."
+}

@@ -1,0 +1,91 @@
+STEP 14 — GLOBAL + LOCAL SHAP ANALYSIS
+================================================================================
+
+Test observations: 1782
+SHAP observations: 300
+Background observations: 100
+
+GLOBAL SHAP SPEARMAN
+--------------------------------------------------------------------------------
+Model_A Model_B  Spearman_rho      p_value
+     RF     XGB      0.872727 2.472857e-07
+     RF    LGBM      0.737662 1.354741e-04
+     RF     MLP      0.262338 2.506256e-01
+    XGB    LGBM      0.838961 2.013971e-06
+    XGB     MLP      0.325974 1.492832e-01
+   LGBM     MLP      0.323377 1.527420e-01
+
+GLOBAL SHAP COSINE SIMILARITY
+--------------------------------------------------------------------------------
+Model_A Model_B  Cosine_similarity
+     RF     XGB           0.861076
+     RF    LGBM           0.876047
+     RF     MLP           0.707082
+    XGB    LGBM           0.883367
+    XGB     MLP           0.591483
+   LGBM     MLP           0.814706
+
+LOCAL SHAP CONSISTENCY SUMMARY
+--------------------------------------------------------------------------------
+Model_A Model_B  Local_Spearman_mean  Local_Spearman_std  Local_Spearman_median  Local_Cosine_mean  Local_Cosine_std
+   LGBM     MLP             0.115255            0.221453               0.129870           0.459606          0.358766
+     RF    LGBM             0.477455            0.248853               0.514935           0.608168          0.248595
+     RF     MLP             0.187762            0.175173               0.212987           0.338089          0.224293
+     RF     XGB             0.560372            0.178114               0.555195           0.573938          0.320248
+    XGB    LGBM             0.426727            0.248402               0.435065           0.569454          0.325423
+    XGB     MLP             0.183563            0.202565               0.202597           0.332937          0.329750
+
+TOP 10 GLOBAL FEATURES
+--------------------------------------------------------------------------------
+
+RF
+    Feature  Rank  Mean_Absolute_SHAP  Normalized_SHAP
+        loc     1            0.037960         0.166722
+      iv(g)     2            0.029062         0.127641
+      ev(g)     3            0.020274         0.089047
+    lOBlank     4            0.018477         0.081153
+       v(g)     5            0.013276         0.058309
+branchCount     6            0.010799         0.047431
+  uniq_Opnd     7            0.010780         0.047345
+          i     8            0.010480         0.046028
+          d     9            0.008745         0.038409
+   total_Op    10            0.008502         0.037342
+
+XGB
+    Feature  Rank  Mean_Absolute_SHAP  Normalized_SHAP
+        loc     1            0.307813         0.379470
+      iv(g)     2            0.243667         0.300392
+      ev(g)     3            0.125590         0.154827
+          d     4            0.023338         0.028770
+   total_Op     5            0.021463         0.026460
+    lOBlank     6            0.018456         0.022753
+       v(g)     7            0.017724         0.021850
+          i     8            0.011969         0.014756
+          l     9            0.009577         0.011807
+branchCount    10            0.009137         0.011263
+
+LGBM
+    Feature  Rank  Mean_Absolute_SHAP  Normalized_SHAP
+        loc     1            0.088381         0.339229
+      iv(g)     2            0.024705         0.094823
+      ev(g)     3            0.013767         0.052841
+          d     4            0.013618         0.052268
+   total_Op     5            0.012707         0.048771
+       v(g)     6            0.012439         0.047744
+          i     7            0.011067         0.042478
+          e     8            0.009958         0.038222
+ total_Opnd     9            0.009419         0.036152
+branchCount    10            0.009290         0.035656
+
+MLP
+    Feature  Rank  Mean_Absolute_SHAP  Normalized_SHAP
+        loc     1            0.282688         0.247023
+     lOCode     2            0.208490         0.182186
+ total_Opnd     3            0.100990         0.088248
+          d     4            0.090350         0.078951
+          i     5            0.079617         0.069572
+  lOComment     6            0.065918         0.057602
+    lOBlank     7            0.039338         0.034375
+          l     8            0.037989         0.033196
+branchCount     9            0.036305         0.031725
+    uniq_Op    10            0.033869         0.029596

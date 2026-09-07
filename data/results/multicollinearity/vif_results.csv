@@ -1,0 +1,22 @@
+Feature,VIF,Interpretation
+t,44811936590751.2,Severe
+e,44811936590751.2,Severe
+v,29122.67749287703,Severe
+b,28921.46764608551,Severe
+n,9817.908368210597,Severe
+total_Op,3620.984954358638,Severe
+total_Opnd,1606.8544280491772,Severe
+branchCount,70.38759895360647,Severe
+v(g),61.18842405762379,Severe
+lOCode,30.173782346931546,Severe
+uniq_Opnd,23.868735882736214,Severe
+loc,14.921122506687222,Severe
+d,13.216116081599655,Severe
+uniq_Op,9.356438150459397,Moderate / High
+iv(g),7.292486754992617,Moderate / High
+i,5.920538593571623,Moderate / High
+ev(g),4.7565287562906775,Low / Acceptable
+lOBlank,4.538468776858412,Low / Acceptable
+lOComment,2.1277603239333103,Low / Acceptable
+l,1.4289393994997763,Low / Acceptable
+locCodeAndComment,1.1241041073792863,Low / Acceptable

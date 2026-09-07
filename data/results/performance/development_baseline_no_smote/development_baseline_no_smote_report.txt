@@ -1,0 +1,51 @@
+JM1 DEVELOPMENT-SET BASELINE EVALUATION WITHOUT SMOTE
+================================================================================
+
+Development samples: 7,126
+Number of features: 21
+Validation: Stratified 5-Fold CV
+SMOTE: Not applied
+Test set: Not used
+
+MODEL PERFORMANCE
+--------------------------------------------------------------------------------
+
+RF
+Accuracy    : 0.7745 +/- 0.0079
+Precision   : 0.4988 +/- 0.0411
+Recall      : 0.2071 +/- 0.0183
+Specificity : 0.9392 +/- 0.0102
+F1          : 0.2922 +/- 0.0215
+MCC         : 0.2100 +/- 0.0271
+ROC-AUC     : 0.6764 +/- 0.0100
+PR-AUC      : 0.4033 +/- 0.0133
+
+XGB
+Accuracy    : 0.7593 +/- 0.0119
+Precision   : 0.4398 +/- 0.0437
+Recall      : 0.2470 +/- 0.0140
+Specificity : 0.9080 +/- 0.0123
+F1          : 0.3162 +/- 0.0221
+MCC         : 0.1952 +/- 0.0344
+ROC-AUC     : 0.6537 +/- 0.0066
+PR-AUC      : 0.3861 +/- 0.0166
+
+LGBM
+Accuracy    : 0.7770 +/- 0.0067
+Precision   : 0.5102 +/- 0.0338
+Recall      : 0.2233 +/- 0.0139
+Specificity : 0.9377 +/- 0.0051
+F1          : 0.3106 +/- 0.0194
+MCC         : 0.2257 +/- 0.0259
+ROC-AUC     : 0.6701 +/- 0.0083
+PR-AUC      : 0.3975 +/- 0.0218
+
+MLP
+Accuracy    : 0.7860 +/- 0.0080
+Precision   : 0.5808 +/- 0.0625
+Recall      : 0.1872 +/- 0.0158
+Specificity : 0.9598 +/- 0.0112
+F1          : 0.2822 +/- 0.0190
+MCC         : 0.2370 +/- 0.0293
+ROC-AUC     : 0.6847 +/- 0.0181
+PR-AUC      : 0.4198 +/- 0.0297

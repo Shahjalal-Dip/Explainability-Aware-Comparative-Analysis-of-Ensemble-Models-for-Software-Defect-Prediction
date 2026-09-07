@@ -1,0 +1,264 @@
+JM1 DEVELOPMENT-SET SMOTE VS NO-SMOTE COMPARISON
+==========================================================================================
+
+Experimental design
+--------------------
+Dataset: JM1 Development Set
+Development set: 80% of original dataset
+Test set: 20% - COMPLETELY UNTOUCHED
+Validation: Stratified 5-Fold Cross-Validation
+Comparison: SMOTE vs No-SMOTE
+SMOTE applied: Training folds only
+Random state: 42
+
+Models
+------
+- Random Forest
+- XGBoost
+- LightGBM
+- MLP
+
+Performance comparison
+-----------------------
+
+Random Forest
+----------------------------------------
+Accuracy:
+  No-SMOTE : 0.7745 ± 0.0079
+  SMOTE    : 0.7537 ± 0.0132
+  Difference: -0.0208
+  Change   : -2.68%
+  Better   : No-SMOTE
+
+Precision:
+  No-SMOTE : 0.4988 ± 0.0411
+  SMOTE    : 0.4429 ± 0.0308
+  Difference: -0.0560
+  Change   : -11.22%
+  Better   : No-SMOTE
+
+Recall:
+  No-SMOTE : 0.2071 ± 0.0183
+  SMOTE    : 0.3581 ± 0.0222
+  Difference: +0.1509
+  Change   : +72.87%
+  Better   : SMOTE
+
+Specificity:
+  No-SMOTE : 0.9392 ± 0.0102
+  SMOTE    : 0.8686 ± 0.0168
+  Difference: -0.0706
+  Change   : -7.52%
+  Better   : No-SMOTE
+
+F1:
+  No-SMOTE : 0.2922 ± 0.0215
+  SMOTE    : 0.3955 ± 0.0214
+  Difference: +0.1033
+  Change   : +35.35%
+  Better   : SMOTE
+
+MCC:
+  No-SMOTE : 0.2100 ± 0.0271
+  SMOTE    : 0.2456 ± 0.0296
+  Difference: +0.0355
+  Change   : +16.91%
+  Better   : SMOTE
+
+ROC-AUC:
+  No-SMOTE : 0.6764 ± 0.0100
+  SMOTE    : 0.6833 ± 0.0093
+  Difference: +0.0069
+  Change   : +1.02%
+  Better   : SMOTE
+
+PR-AUC:
+  No-SMOTE : 0.4033 ± 0.0133
+  SMOTE    : 0.4041 ± 0.0116
+  Difference: +0.0008
+  Change   : +0.19%
+  Better   : SMOTE
+
+
+XGBoost
+----------------------------------------
+Accuracy:
+  No-SMOTE : 0.7593 ± 0.0119
+  SMOTE    : 0.7555 ± 0.0094
+  Difference: -0.0038
+  Change   : -0.50%
+  Better   : No-SMOTE
+
+Precision:
+  No-SMOTE : 0.4398 ± 0.0437
+  SMOTE    : 0.4367 ± 0.0300
+  Difference: -0.0032
+  Change   : -0.72%
+  Better   : No-SMOTE
+
+Recall:
+  No-SMOTE : 0.2470 ± 0.0140
+  SMOTE    : 0.2988 ± 0.0223
+  Difference: +0.0518
+  Change   : +20.95%
+  Better   : SMOTE
+
+Specificity:
+  No-SMOTE : 0.9080 ± 0.0123
+  SMOTE    : 0.8881 ± 0.0073
+  Difference: -0.0199
+  Change   : -2.19%
+  Better   : No-SMOTE
+
+F1:
+  No-SMOTE : 0.3162 ± 0.0221
+  SMOTE    : 0.3547 ± 0.0251
+  Difference: +0.0386
+  Change   : +12.20%
+  Better   : SMOTE
+
+MCC:
+  No-SMOTE : 0.1952 ± 0.0344
+  SMOTE    : 0.2163 ± 0.0309
+  Difference: +0.0211
+  Change   : +10.79%
+  Better   : SMOTE
+
+ROC-AUC:
+  No-SMOTE : 0.6537 ± 0.0066
+  SMOTE    : 0.6608 ± 0.0096
+  Difference: +0.0071
+  Change   : +1.08%
+  Better   : SMOTE
+
+PR-AUC:
+  No-SMOTE : 0.3861 ± 0.0166
+  SMOTE    : 0.3991 ± 0.0167
+  Difference: +0.0130
+  Change   : +3.37%
+  Better   : SMOTE
+
+
+LightGBM
+----------------------------------------
+Accuracy:
+  No-SMOTE : 0.7770 ± 0.0067
+  SMOTE    : 0.7713 ± 0.0091
+  Difference: -0.0058
+  Change   : -0.74%
+  Better   : No-SMOTE
+
+Precision:
+  No-SMOTE : 0.5102 ± 0.0338
+  SMOTE    : 0.4862 ± 0.0340
+  Difference: -0.0241
+  Change   : -4.71%
+  Better   : No-SMOTE
+
+Recall:
+  No-SMOTE : 0.2233 ± 0.0139
+  SMOTE    : 0.2895 ± 0.0231
+  Difference: +0.0661
+  Change   : +29.61%
+  Better   : SMOTE
+
+Specificity:
+  No-SMOTE : 0.9377 ± 0.0051
+  SMOTE    : 0.9111 ± 0.0084
+  Difference: -0.0266
+  Change   : -2.84%
+  Better   : No-SMOTE
+
+F1:
+  No-SMOTE : 0.3106 ± 0.0194
+  SMOTE    : 0.3627 ± 0.0258
+  Difference: +0.0520
+  Change   : +16.75%
+  Better   : SMOTE
+
+MCC:
+  No-SMOTE : 0.2257 ± 0.0259
+  SMOTE    : 0.2459 ± 0.0313
+  Difference: +0.0202
+  Change   : +8.93%
+  Better   : SMOTE
+
+ROC-AUC:
+  No-SMOTE : 0.6701 ± 0.0083
+  SMOTE    : 0.6804 ± 0.0036
+  Difference: +0.0102
+  Change   : +1.53%
+  Better   : SMOTE
+
+PR-AUC:
+  No-SMOTE : 0.3975 ± 0.0218
+  SMOTE    : 0.4164 ± 0.0061
+  Difference: +0.0189
+  Change   : +4.76%
+  Better   : SMOTE
+
+
+MLP
+----------------------------------------
+Accuracy:
+  No-SMOTE : 0.7860 ± 0.0080
+  SMOTE    : 0.6892 ± 0.0084
+  Difference: -0.0968
+  Change   : -12.32%
+  Better   : No-SMOTE
+
+Precision:
+  No-SMOTE : 0.5808 ± 0.0625
+  SMOTE    : 0.3514 ± 0.0135
+  Difference: -0.2293
+  Change   : -39.49%
+  Better   : No-SMOTE
+
+Recall:
+  No-SMOTE : 0.1872 ± 0.0158
+  SMOTE    : 0.4523 ± 0.0341
+  Difference: +0.2651
+  Change   : +141.65%
+  Better   : SMOTE
+
+Specificity:
+  No-SMOTE : 0.9598 ± 0.0112
+  SMOTE    : 0.7579 ± 0.0135
+  Difference: -0.2019
+  Change   : -21.03%
+  Better   : No-SMOTE
+
+F1:
+  No-SMOTE : 0.2822 ± 0.0190
+  SMOTE    : 0.3953 ± 0.0201
+  Difference: +0.1131
+  Change   : +40.07%
+  Better   : SMOTE
+
+MCC:
+  No-SMOTE : 0.2370 ± 0.0293
+  SMOTE    : 0.1935 ± 0.0239
+  Difference: -0.0435
+  Change   : -18.35%
+  Better   : No-SMOTE
+
+ROC-AUC:
+  No-SMOTE : 0.6847 ± 0.0181
+  SMOTE    : 0.6300 ± 0.0148
+  Difference: -0.0547
+  Change   : -7.98%
+  Better   : No-SMOTE
+
+PR-AUC:
+  No-SMOTE : 0.4198 ± 0.0297
+  SMOTE    : 0.3812 ± 0.0124
+  Difference: -0.0386
+  Change   : -9.19%
+  Better   : No-SMOTE
+
+
+Interpretation note
+-------------------
+Positive differences indicate that SMOTE produced a higher mean cross-validation score than No-SMOTE.
+Negative differences indicate that No-SMOTE produced a higher mean cross-validation score.
+This comparison is based exclusively on development-set cross-validation results. The locked test set was not used.

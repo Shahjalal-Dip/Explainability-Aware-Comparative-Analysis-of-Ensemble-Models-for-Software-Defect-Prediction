@@ -1,0 +1,5 @@
+Model,Training_Strategy,Original_Development_Samples,SMOTE_Development_Samples,Class_0_Before_SMOTE,Class_1_Before_SMOTE,Class_0_After_SMOTE,Class_1_After_SMOTE,Random_State,Test_Set_Used,SHAP_Analysis_Performed
+RF,SMOTE,7126,11046,5523,1603,5523,5523,42,False,False
+XGB,SMOTE,7126,11046,5523,1603,5523,5523,42,False,False
+LGBM,SMOTE,7126,11046,5523,1603,5523,5523,42,False,False
+MLP,SMOTE,7126,11046,5523,1603,5523,5523,42,False,False

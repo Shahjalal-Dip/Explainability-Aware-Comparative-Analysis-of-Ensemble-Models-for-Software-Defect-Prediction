@@ -1,0 +1,35 @@
+================================================================================
+UNIFIED CROSS-MODEL SHAP CONSISTENCY ANALYSIS
+================================================================================
+
+Experimental design
+--------------------------------------------------
+Test rows: 1782
+Features: 21
+SHAP observations: 300
+Background observations: 100
+Prediction output: positive-class probability
+SHAP algorithm: permutation
+Maximum evaluations: 211
+
+GLOBAL CONSISTENCY
+--------------------------------------------------
+RF-XGB: Spearman=0.881818, Cosine=0.865940
+RF-LGBM: Spearman=0.744156, Cosine=0.883181
+RF-MLP: Spearman=0.202597, Cosine=0.706596
+XGB-LGBM: Spearman=0.833766, Cosine=0.914601
+XGB-MLP: Spearman=0.284416, Cosine=0.621273
+LGBM-MLP: Spearman=0.280519, Cosine=0.807716
+
+LOCAL CONSISTENCY
+--------------------------------------------------
+LGBM-MLP: Spearman mean=0.112684, Cosine mean=0.443920
+RF-LGBM: Spearman mean=0.453584, Cosine mean=0.588904
+RF-MLP: Spearman mean=0.173623, Cosine mean=0.332016
+RF-XGB: Spearman mean=0.582835, Cosine mean=0.686228
+XGB-LGBM: Spearman mean=0.448736, Cosine mean=0.634284
+XGB-MLP: Spearman mean=0.201944, Cosine mean=0.387402
+
+METHODOLOGICAL NOTE
+--------------------------------------------------
+This analysis replaces the previous cross-model SHAP comparison because all models are now explained using the same permutation SHAP methodology and the same positive-class probability output.

@@ -1,0 +1,2 @@
+Comparison,Common_features,RF_features,RF_RID_features,Removed_features,Global_Spearman_rho,Global_Spearman_p_value,Global_Cosine_similarity
+RF vs RF-RID,21,21,21,0,0.1595906598414059,0.4895634107394774,0.5227780843745113

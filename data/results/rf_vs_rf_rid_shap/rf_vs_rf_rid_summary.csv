@@ -1,0 +1,2 @@
+Model_Comparison,Full_RF_Features,RF_RID_Features,Removed_Features,SHAP_Sample_Size,Background_Size,Global_Spearman,Global_Cosine,Local_Spearman_Mean,Local_Spearman_STD,Local_Spearman_Median,Local_Cosine_Mean,Local_Cosine_STD,Local_Cosine_Median
+RF_vs_RF_RID,21,12,9,300,100,0.9790209790209792,0.9718063035254242,0.8501864801864804,0.10312151899990145,0.8741258741258742,0.9050402932085508,0.08362112234857344,0.9269711185505368

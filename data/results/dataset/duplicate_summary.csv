@@ -1,0 +1,5 @@
+metric,value
+exact_duplicates_before_cleaning,4296
+exact_duplicates_removed,4296
+feature_duplicate_rows_after_cleaning,176
+unique_feature_vectors_after_cleaning,8820

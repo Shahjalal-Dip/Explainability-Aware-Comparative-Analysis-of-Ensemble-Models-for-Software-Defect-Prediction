@@ -1,0 +1,123 @@
+==========================================================================================
+JM1 MULTICOLLINEARITY ANALYSIS REPORT
+==========================================================================================
+
+RESEARCH PROJECT
+Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction
+
+DATASET INFORMATION
+------------------------------------------------------------------------------------------
+Input dataset: E:\Programming\Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction\data\processed\JM1\JM1_development.csv
+Rows analyzed: 7,126
+Columns: 22
+Features analyzed: 21
+Target column: defects
+Dataset split: Development set only
+Independent test set: NOT USED
+
+PEARSON CORRELATION ANALYSIS
+------------------------------------------------------------------------------------------
+High-correlation threshold: |r| >= 0.8
+Number of high-correlation pairs: 49
+
+e <-> t : r = 1.0000
+v <-> b : r = 0.9996
+n <-> total_Op : r = 0.9954
+n <-> total_Opnd : r = 0.9893
+n <-> v : r = 0.9849
+n <-> b : r = 0.9845
+v <-> total_Op : r = 0.9821
+b <-> total_Op : r = 0.9817
+v(g) <-> branchCount : r = 0.9816
+v <-> total_Opnd : r = 0.9719
+b <-> total_Opnd : r = 0.9715
+total_Op <-> total_Opnd : r = 0.9709
+v <-> lOCode : r = 0.9638
+b <-> lOCode : r = 0.9635
+n <-> lOCode : r = 0.9428
+lOCode <-> total_Op : r = 0.9411
+lOCode <-> total_Opnd : r = 0.9293
+loc <-> lOCode : r = 0.9223
+loc <-> v : r = 0.9011
+loc <-> b : r = 0.9007
+iv(g) <-> branchCount : r = 0.8911
+loc <-> n : r = 0.8773
+loc <-> total_Op : r = 0.8772
+v(g) <-> iv(g) : r = 0.8675
+loc <-> total_Opnd : r = 0.8624
+uniq_Opnd <-> total_Opnd : r = 0.8598
+v <-> uniq_Opnd : r = 0.8553
+b <-> uniq_Opnd : r = 0.8548
+lOCode <-> uniq_Opnd : r = 0.8404
+n <-> uniq_Opnd : r = 0.8398
+loc <-> branchCount : r = 0.8299
+e <-> lOCode : r = 0.8288
+t <-> lOCode : r = 0.8288
+loc <-> v(g) : r = 0.8279
+lOCode <-> lOBlank : r = 0.8199
+d <-> total_Op : r = 0.8194
+uniq_Opnd <-> total_Op : r = 0.8170
+v <-> lOBlank : r = 0.8141
+b <-> lOBlank : r = 0.8138
+loc <-> lOBlank : r = 0.8128
+loc <-> iv(g) : r = 0.8127
+n <-> d : r = 0.8083
+n <-> lOBlank : r = 0.8073
+lOBlank <-> total_Op : r = 0.8053
+v <-> e : r = 0.8045
+v <-> t : r = 0.8045
+b <-> t : r = 0.8043
+e <-> b : r = 0.8043
+ev(g) <-> branchCount : r = 0.8005
+
+VARIANCE INFLATION FACTOR (VIF)
+------------------------------------------------------------------------------------------
+Interpretation thresholds:
+  VIF < 5     : Low / generally acceptable
+  5 <= VIF < 10 : Moderate / high
+  VIF >= 10   : Severe multicollinearity
+  Infinite VIF: Perfect or near-perfect linear dependence
+
+t                    VIF = 44811936590751.203125 Severe
+e                    VIF = 44811936590751.203125 Severe
+v                    VIF = 29122.677493    Severe
+b                    VIF = 28921.467646    Severe
+n                    VIF = 9817.908368     Severe
+total_Op             VIF = 3620.984954     Severe
+total_Opnd           VIF = 1606.854428     Severe
+branchCount          VIF = 70.387599       Severe
+v(g)                 VIF = 61.188424       Severe
+lOCode               VIF = 30.173782       Severe
+uniq_Opnd            VIF = 23.868736       Severe
+loc                  VIF = 14.921123       Severe
+d                    VIF = 13.216116       Severe
+uniq_Op              VIF = 9.356438        Moderate / High
+iv(g)                VIF = 7.292487        Moderate / High
+i                    VIF = 5.920539        Moderate / High
+ev(g)                VIF = 4.756529        Low / Acceptable
+lOBlank              VIF = 4.538469        Low / Acceptable
+lOComment            VIF = 2.127760        Low / Acceptable
+l                    VIF = 1.428939        Low / Acceptable
+locCodeAndComment    VIF = 1.124104        Low / Acceptable
+
+SUMMARY
+------------------------------------------------------------------------------------------
+Features with infinite VIF: 0
+Features with severe VIF (>=10): 13
+Features with moderate/high VIF (5-10): 3
+Features with VIF <5: 5
+
+METHODOLOGICAL INTERPRETATION
+------------------------------------------------------------------------------------------
+This analysis was conducted exclusively on the development set. The independent test set remained completely untouched.
+
+Pearson correlation measures pairwise linear association between software metrics, while VIF evaluates the extent to which each feature can be explained by the remaining features collectively.
+
+The presence of highly correlated features does not by itself justify removing features at this stage. Instead, these results provide the empirical basis for the subsequent RF-RID experiment, where redundant features will be reduced and the effects on both predictive performance and SHAP explanations will be evaluated.
+
+This distinction is important because the research objective is not simply to maximize predictive performance, but to investigate whether feature redundancy influences explanation consistency across models.
+
+NEXT ANALYSIS STAGE
+------------------------------------------------------------------------------------------
+Step 11: RF vs RF-RID
+The multicollinearity findings will be used to construct the redundancy-reduced feature set for the RF-RID experiment.

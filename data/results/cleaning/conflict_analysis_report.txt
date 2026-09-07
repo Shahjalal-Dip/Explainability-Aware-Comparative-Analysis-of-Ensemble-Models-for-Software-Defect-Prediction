@@ -1,0 +1,40 @@
+================================================================================
+SOFTWARE DEFECT DATASET - CONFLICT ANALYSIS REPORT
+================================================================================
+
+1. DATASET / ANALYSIS SIZE
+Number of conflict groups: 88
+Number of conflicting rows: 1116
+
+2. DEFECT LABEL DISTRIBUTION
+Defective rows: 132
+Non-defective rows: 984
+Defective percentage: 11.83%
+Non-defective percentage: 88.17%
+
+3. DUPLICATE ANALYSIS
+Exact duplicate rows: 1024
+Feature duplicate rows: 1116
+
+4. FEATURE-LEVEL CONFLICT ANALYSIS
+Unique conflicting feature vectors: 88
+Rows belonging to conflict groups: 1116
+
+5. LABEL AMBIGUITY
+Number of conflict groups: 88
+Overall ambiguity rate: 11.20%
+Perfect 50/50 conflict groups: 24
+High-ambiguity groups: 25
+Moderate-ambiguity groups: 41
+Low-ambiguity groups: 22
+
+6. INTERPRETATION
+The conflict analysis identifies feature vectors that occur with both defective and non-defective labels.
+Such observations represent label ambiguity at the feature level and are relevant when evaluating model behavior and explanation consistency.
+These conflict groups should be considered when interpreting prediction performance and SHAP explanation stability.
+
+7. GENERATED OUTPUT FILES
+Detailed conflict analysis: E:\Programming\Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction\data\results\cleaning\conflict_group_detailed_analysis.csv
+Label distribution: E:\Programming\Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction\data\results\cleaning\conflict_label_distribution.csv
+
+================================================================================

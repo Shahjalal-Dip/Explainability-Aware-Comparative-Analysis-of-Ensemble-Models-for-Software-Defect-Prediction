@@ -1,0 +1,51 @@
+JM1 DEVELOPMENT-SET HYPERPARAMETER TUNING REPORT
+================================================================================
+
+Experimental Design
+-------------------
+Dataset: JM1 Development Set
+Validation: Stratified 5-Fold Cross-Validation
+SMOTE: Training folds only
+Test set: Completely untouched
+Primary optimization metric: F1-score
+Random state: 42
+
+Tuning Summary
+--------------
+
+RF
+  F1:       0.4308 +/- 0.0151
+  MCC:      0.2654 +/- 0.0235
+  ROC-AUC:  0.6953 +/- 0.0101
+  PR-AUC:   0.4266 +/- 0.0202
+  Parameters: {'model__max_depth': 10, 'model__max_features': 'sqrt', 'model__min_samples_leaf': 1, 'model__min_samples_split': 5, 'model__n_estimators': 300}
+
+XGB
+  F1:       0.4292 +/- 0.0268
+  MCC:      0.2428 +/- 0.0389
+  ROC-AUC:  0.6796 +/- 0.0147
+  PR-AUC:   0.4118 +/- 0.0227
+  Parameters: {'model__colsample_bytree': 0.8, 'model__learning_rate': 0.01, 'model__max_depth': 3, 'model__n_estimators': 200, 'model__subsample': 0.8}
+
+MLP
+  F1:       0.4204 +/- 0.0257
+  MCC:      0.2282 +/- 0.0365
+  ROC-AUC:  0.6574 +/- 0.0161
+  PR-AUC:   0.3990 +/- 0.0290
+  Parameters: {'model__activation': 'tanh', 'model__alpha': 0.01, 'model__hidden_layer_sizes': (50,), 'model__learning_rate_init': 0.001}
+
+LGBM
+  F1:       0.3938 +/- 0.0258
+  MCC:      0.2681 +/- 0.0278
+  ROC-AUC:  0.6896 +/- 0.0122
+  PR-AUC:   0.4233 +/- 0.0235
+  Parameters: {'model__learning_rate': 0.01, 'model__max_depth': 20, 'model__min_child_samples': 30, 'model__n_estimators': 200, 'model__num_leaves': 63}
+
+Methodological Notes
+--------------------
+1. The locked 20% test set was never accessed.
+2. SMOTE was applied only inside training folds.
+3. Validation folds retained their original class distribution.
+4. Hyperparameters were selected using development-set CV.
+5. F1-score was used as the primary optimization criterion.
+6. MCC, ROC-AUC and PR-AUC were retained as secondary measures.

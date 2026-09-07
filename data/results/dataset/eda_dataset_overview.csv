@@ -1,0 +1,9 @@
+metric,value
+total_rows,8908
+total_columns,22
+feature_count,21
+target_column,defects
+numeric_feature_count,21
+non_numeric_feature_count,0
+missing_value_count,0
+exact_duplicate_count,0

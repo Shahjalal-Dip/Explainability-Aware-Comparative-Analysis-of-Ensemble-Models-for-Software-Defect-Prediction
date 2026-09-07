@@ -1,0 +1,62 @@
+================================================================================
+FINAL RESEARCH FINDINGS
+Evaluating SHAP Explanation Consistency in Ensemble Models
+for Software Defect Prediction (NASA JM1)
+================================================================================
+
+1. PREDICTIVE PERFORMANCE
+--------------------------------------------------------------------------------
+Best model by CV F1: RF
+Weakest model by CV F1: LGBM
+Best model on the independent test set (F1): XGB
+All four models (RF, XGB, LGBM, MLP) achieved broadly comparable but modest F1 scores, reflecting the class imbalance and inherent difficulty of the NASA JM1 defect-prediction task.
+
+2. SHAP EXPLANATION CONSISTENCY (CROSS-MODEL)
+--------------------------------------------------------------------------------
+Most consistent model pair: RF-XGB (Pairwise CECI = 0.876404)
+Least consistent model pair: RF-MLP (Pairwise CECI = 0.684468)
+
+Average pairwise CECI per model (higher = more consistent with others):
+  XGB   : 0.807553
+  LGBM  : 0.800313
+  RF    : 0.798744
+  MLP   : 0.696897
+
+Most consistent individual model overall: XGB
+Least consistent individual model overall: MLP
+The two tree-based gradient boosting / bagging models with similar inductive biases (RF and XGB) show the strongest agreement in SHAP explanations, while the MLP is consistently the outlier, producing the most divergent explanations against every other model.
+
+Weakest consistency component: Local Spearman (normalized score = 0.666007). Local, instance-level agreement is systematically weaker than global, population-level agreement, indicating that models rank feature importance similarly overall but disagree more on individual predictions.
+
+3. CROSS-MODEL EXPLANATION CONSISTENCY INDEX (CECI)
+--------------------------------------------------------------------------------
+Overall CECI: 0.775876 (77.59%)
+This indicates a moderately-high-to-high level of agreement between model explanations across all four models and all six pairwise comparisons, but not perfect consistency.
+
+4. ROBUSTNESS OF CECI (5,000-SAMPLE BOOTSTRAP)
+--------------------------------------------------------------------------------
+Bootstrap mean CECI: 0.775862
+Bootstrap SD: 0.001055
+95% Bootstrap CI: [0.773788, 0.777865]
+Interpretation: Very high bootstrap stability
+The extremely narrow confidence interval and low standard deviation show that the Overall CECI estimate is highly stable and not an artifact of the particular test-set sample used.
+
+5. STATISTICAL VALIDATION
+--------------------------------------------------------------------------------
+6 of 6 model pairs show local SHAP Spearman correlations significantly different from zero after Holm-Bonferroni correction (Wilcoxon signed-rank test, alpha = 0.05).
+This confirms that even the weakest pairwise agreement (RF-MLP) reflects a real, non-random relationship between explanations, rather than statistical noise.
+
+6. DOES PERFORMANCE AGREE WITH EXPLANATION CONSISTENCY?
+--------------------------------------------------------------------------------
+The best-performing model by CV F1 (RF) is NOT the same as the model with the most consistent explanations (XGB). Predictive performance and explanation consistency DIVERGE: a model can be competitive in predictive terms while still producing SHAP explanations that disagree more with its peers, and vice versa.
+
+7. IMPLICATIONS FOR SOFTWARE DEFECT PREDICTION
+--------------------------------------------------------------------------------
+- Practitioners choosing between RF, XGB, LGBM and MLP for defect prediction should not assume that model choice is explanation-neutral: swapping a tree ensemble for an MLP measurably changes which features SHAP identifies as important, especially at the level of individual modules/instances.
+- Global feature-importance rankings are comparatively stable across model families, so high-level guidance to developers (e.g., which code metrics matter most) is relatively robust to model choice.
+- Instance-level (local) explanations used to justify a decision about a single module are less reliable across model families and should be interpreted with more caution, ideally cross-checked against a second model when used to guide developer-facing decisions.
+- The high bootstrap stability of CECI suggests these consistency findings are not sample-specific and should generalize to other held-out data drawn from the same distribution.
+
+================================================================================
+END OF FINDINGS
+================================================================================

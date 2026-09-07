@@ -1,0 +1,107 @@
+STEP 16 — STATISTICAL VALIDATION OF CROSS-MODEL SHAP CONSISTENCY
+================================================================================
+
+Methodology
+--------------------------------------------------------------------------------
+Bootstrap repetitions: 5000
+Confidence level: 95%
+Wilcoxon signed-rank test: local Spearman vs zero
+Multiple-comparison correction: Holm-Bonferroni
+Cosine similarity: bootstrap confidence intervals only
+
+RF-XGB
+--------------------------------------------------------------------------------
+n = 300
+Local Spearman mean = 0.588424
+Local Spearman mean 95% CI = [0.566376, 0.609597]
+Local Spearman median = 0.611688
+Local Spearman median 95% CI = [0.574010, 0.645455]
+Local cosine mean = 0.683703
+Local cosine mean 95% CI = [0.657837, 0.708012]
+Local cosine median = 0.759740
+Local cosine median 95% CI = [0.736330, 0.784851]
+Wilcoxon statistic = 3.000000
+Wilcoxon raw p = 6.265490e-51
+Wilcoxon Holm-adjusted p = 3.759294e-50
+Significant after Holm = True
+
+RF-LGBM
+--------------------------------------------------------------------------------
+n = 300
+Local Spearman mean = 0.457359
+Local Spearman mean 95% CI = [0.429770, 0.485334]
+Local Spearman median = 0.488961
+Local Spearman median 95% CI = [0.451299, 0.529221]
+Local cosine mean = 0.591000
+Local cosine mean 95% CI = [0.562027, 0.618888]
+Local cosine median = 0.646612
+Local cosine median 95% CI = [0.618220, 0.687444]
+Wilcoxon statistic = 325.500000
+Wilcoxon raw p = 1.553377e-49
+Wilcoxon Holm-adjusted p = 6.213508e-49
+Significant after Holm = True
+
+RF-MLP
+--------------------------------------------------------------------------------
+n = 300
+Local Spearman mean = 0.186182
+Local Spearman mean 95% CI = [0.164982, 0.207178]
+Local Spearman median = 0.192208
+Local Spearman median 95% CI = [0.164935, 0.216883]
+Local cosine mean = 0.326114
+Local cosine mean 95% CI = [0.300580, 0.351177]
+Local cosine median = 0.332152
+Local cosine median 95% CI = [0.303570, 0.370615]
+Wilcoxon statistic = 3685.500000
+Wilcoxon raw p = 5.492959e-36
+Wilcoxon Holm-adjusted p = 1.098592e-35
+Significant after Holm = True
+
+XGB-LGBM
+--------------------------------------------------------------------------------
+n = 300
+Local Spearman mean = 0.443165
+Local Spearman mean 95% CI = [0.417258, 0.469348]
+Local Spearman median = 0.450649
+Local Spearman median 95% CI = [0.423377, 0.486364]
+Local cosine mean = 0.635814
+Local cosine mean 95% CI = [0.599995, 0.670459]
+Local cosine median = 0.716227
+Local cosine median 95% CI = [0.680290, 0.749885]
+Wilcoxon statistic = 260.000000
+Wilcoxon raw p = 8.123352e-50
+Wilcoxon Holm-adjusted p = 4.061676e-49
+Significant after Holm = True
+
+XGB-MLP
+--------------------------------------------------------------------------------
+n = 300
+Local Spearman mean = 0.209095
+Local Spearman mean 95% CI = [0.186237, 0.231485]
+Local Spearman median = 0.229870
+Local Spearman median 95% CI = [0.210390, 0.252597]
+Local cosine mean = 0.385558
+Local cosine mean 95% CI = [0.347808, 0.420904]
+Local cosine median = 0.504024
+Local cosine median 95% CI = [0.440339, 0.541652]
+Wilcoxon statistic = 3459.000000
+Wilcoxon raw p = 5.053951e-37
+Wilcoxon Holm-adjusted p = 1.516185e-36
+Significant after Holm = True
+
+LGBM-MLP
+--------------------------------------------------------------------------------
+n = 300
+Local Spearman mean = 0.107857
+Local Spearman mean 95% CI = [0.081402, 0.132459]
+Local Spearman median = 0.137662
+Local Spearman median 95% CI = [0.103896, 0.159740]
+Local cosine mean = 0.442494
+Local cosine mean 95% CI = [0.399360, 0.483201]
+Local cosine median = 0.574567
+Local cosine median 95% CI = [0.520503, 0.610505]
+Wilcoxon statistic = 10690.500000
+Wilcoxon raw p = 2.716493e-15
+Wilcoxon Holm-adjusted p = 2.716493e-15
+Significant after Holm = True
+

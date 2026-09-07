@@ -1,0 +1,76 @@
+JM1 INDEPENDENT TEST EVALUATION REPORT
+================================================================================
+
+Dataset: NASA JM1
+Test samples: 1782
+Features: 21
+Test dataset: E:\Programming\Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction\data\processed\JM1\JM1_test.csv
+Test set: Locked independent 20% test set
+SMOTE applied to test set: NO
+Retraining on test set: NO
+Hyperparameter tuning on test set: NO
+Threshold tuning: NO
+Classification threshold: 0.50
+
+PERFORMANCE RESULTS
+--------------------------------------------------------------------------------
+
+Model: XGB
+Accuracy    : 0.725589
+Precision   : 0.408714
+Recall      : 0.491272
+Specificity : 0.793628
+F1          : 0.446206
+MCC         : 0.267834
+ROC-AUC     : 0.693973
+PR-AUC      : 0.406110
+TN          : 1096
+FP          : 285
+FN          : 204
+TP          : 197
+
+Model: RF
+Accuracy    : 0.748036
+Precision   : 0.439086
+Recall      : 0.431421
+Specificity : 0.839971
+F1          : 0.435220
+MCC         : 0.273101
+ROC-AUC     : 0.707301
+PR-AUC      : 0.420506
+TN          : 1160
+FP          : 221
+FN          : 228
+TP          : 173
+
+Model: MLP
+Accuracy    : 0.716049
+Precision   : 0.385120
+Recall      : 0.438903
+Specificity : 0.796524
+F1          : 0.410256
+MCC         : 0.225143
+ROC-AUC     : 0.673638
+PR-AUC      : 0.404772
+TN          : 1100
+FP          : 281
+FN          : 225
+TP          : 176
+
+Model: LGBM
+Accuracy    : 0.762626
+Precision   : 0.459559
+Recall      : 0.311721
+Specificity : 0.893555
+F1          : 0.371471
+MCC         : 0.238361
+ROC-AUC     : 0.687812
+PR-AUC      : 0.413636
+TN          : 1234
+FP          : 147
+FN          : 276
+TP          : 125
+
+
+NOTE:
+The F1 ranking shown in this report is descriptive only. It does not alter the final model selection performed during development.

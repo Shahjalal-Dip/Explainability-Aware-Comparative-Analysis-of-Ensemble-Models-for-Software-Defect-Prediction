@@ -1,0 +1,106 @@
+STEP 18 — FINAL CECI + ROBUSTNESS ANALYSIS
+================================================================================
+
+Research Objective
+--------------------------------------------------------------------------------
+Evaluate the robustness of the Cross-Model Explanation Consistency Index (CECI) using bootstrap resampling of the unified permutation-SHAP consistency results.
+
+Methodology
+--------------------------------------------------------------------------------
+Dataset: NASA JM1
+Models: RF, XGB, LGBM, MLP
+Model pairs: 6
+SHAP method: Unified permutation SHAP
+Consistency dimensions: Global Spearman, Global Cosine, Local Spearman, Local Cosine
+Normalization: (score + 1) / 2
+Weighting: Equal weighting
+Bootstrap repetitions: 5000
+Confidence level: 95%
+
+FINAL CECI
+--------------------------------------------------------------------------------
+Observed Overall CECI: 0.775876
+Observed Overall CECI (%): 77.59%
+Bootstrap Mean: 0.775862
+Bootstrap SD: 0.001055
+95% Bootstrap CI: [0.773788, 0.777865]
+CI Width: 0.004077
+Relative CI Width: 0.005254
+Bootstrap Interpretation: Very high bootstrap stability
+
+PAIRWISE CECI RESULTS
+--------------------------------------------------------------------------------
+1. RF-XGB
+   Pairwise CECI: 0.876404
+   Global CECI Component: 0.934776
+   Local CECI Component: 0.818032
+   Bootstrap Mean: 0.876396
+   95% CI: [0.872180, 0.880510]
+
+2. XGB-LGBM
+   Pairwise CECI: 0.852806
+   Global CECI Component: 0.935867
+   Local CECI Component: 0.769745
+   Bootstrap Mean: 0.852838
+   95% CI: [0.847261, 0.858296]
+
+3. RF-LGBM
+   Pairwise CECI: 0.835359
+   Global CECI Component: 0.908627
+   Local CECI Component: 0.762090
+   Bootstrap Mean: 0.835368
+   95% CI: [0.830554, 0.840272]
+
+4. LGBM-MLP
+   Pairwise CECI: 0.712773
+   Global CECI Component: 0.787958
+   Local CECI Component: 0.637588
+   Bootstrap Mean: 0.712738
+   95% CI: [0.706760, 0.718688]
+
+5. XGB-MLP
+   Pairwise CECI: 0.693449
+   Global CECI Component: 0.738234
+   Local CECI Component: 0.648663
+   Bootstrap Mean: 0.693492
+   95% CI: [0.687863, 0.698780]
+
+6. RF-MLP
+   Pairwise CECI: 0.684468
+   Global CECI Component: 0.740862
+   Local CECI Component: 0.628074
+   Bootstrap Mean: 0.684512
+   95% CI: [0.680383, 0.688487]
+
+LEAVE-ONE-PAIR-OUT SENSITIVITY
+--------------------------------------------------------------------------------
+Removed: RF-XGB
+   Leave-one-out CECI: 0.755771
+   Difference from full CECI: -0.020106
+
+Removed: RF-LGBM
+   Leave-one-out CECI: 0.763980
+   Difference from full CECI: -0.011896
+
+Removed: RF-MLP
+   Leave-one-out CECI: 0.794158
+   Difference from full CECI: 0.018282
+
+Removed: XGB-LGBM
+   Leave-one-out CECI: 0.760490
+   Difference from full CECI: -0.015386
+
+Removed: XGB-MLP
+   Leave-one-out CECI: 0.792362
+   Difference from full CECI: 0.016486
+
+Removed: LGBM-MLP
+   Leave-one-out CECI: 0.788497
+   Difference from full CECI: 0.012621
+
+ROBUSTNESS INTERPRETATION
+--------------------------------------------------------------------------------
+Maximum leave-one-pair-out change: 0.020106
+Bootstrap stability: Very high bootstrap stability
+
+CECI remains a cross-model explanation consistency measure and is not combined with IMSI or RF-RID.

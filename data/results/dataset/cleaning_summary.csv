@@ -1,0 +1,12 @@
+metric,value
+original_rows,13204
+original_columns,22
+missing_target_removed,0
+exact_duplicates_removed,4296
+final_rows,8908
+final_columns,22
+feature_columns,21
+feature_duplicate_rows,176
+conflict_groups,88
+conflict_rows,176
+remaining_exact_duplicates,0

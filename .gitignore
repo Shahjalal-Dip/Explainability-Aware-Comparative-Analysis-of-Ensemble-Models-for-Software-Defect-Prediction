@@ -30,21 +30,21 @@ env/
 # ------------------------------
 # Data / Datasets
 # ------------------------------
-data/
-*.csv
-*.tsv
-*.json
-*.xml
-*.xlsx
-*.xls
-*.parquet
-*.feather
-*.h5
-*.hdf5
-*.npy
-*.npz
-*.pkl
-*.joblib
+# data/
+# *.csv
+# *.tsv
+# *.json
+# *.xml
+# *.xlsx
+# *.xls
+# *.parquet
+# *.feather
+# *.h5
+# *.hdf5
+# *.npy
+# *.npz
+# *.pkl
+# *.joblib
 
 # ------------------------------
 # Models / Checkpoints

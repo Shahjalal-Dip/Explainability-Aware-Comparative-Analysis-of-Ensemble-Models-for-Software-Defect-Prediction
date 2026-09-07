@@ -1,0 +1,69 @@
+JM1 EXPLORATORY DATA ANALYSIS SUMMARY
+======================================================================
+Dataset rows: 8,908
+Dataset columns: 22
+Number of features: 21
+Numeric features: 21
+Missing values: 0
+Exact duplicate rows: 0
+
+TARGET DISTRIBUTION
+----------------------------------------------------------------------
+Class False: 6,904 (77.50%)
+Class True: 2,004 (22.50%)
+
+Class imbalance ratio: 3.4451
+
+HIGH CORRELATION PAIRS
+----------------------------------------------------------------------
+e <-> t: r = 1.0000
+v <-> b: r = 0.9997
+n <-> total_Op: r = 0.9956
+n <-> total_Opnd: r = 0.9892
+n <-> v: r = 0.9847
+n <-> b: r = 0.9844
+v <-> total_Op: r = 0.9819
+b <-> total_Op: r = 0.9815
+v <-> total_Opnd: r = 0.9721
+total_Op <-> total_Opnd: r = 0.9720
+b <-> total_Opnd: r = 0.9718
+v(g) <-> branchCount: r = 0.9712
+v <-> lOCode: r = 0.9618
+b <-> lOCode: r = 0.9615
+n <-> lOCode: r = 0.9430
+lOCode <-> total_Op: r = 0.9415
+lOCode <-> total_Opnd: r = 0.9291
+loc <-> lOCode: r = 0.9206
+loc <-> v: r = 0.8999
+loc <-> b: r = 0.8995
+loc <-> n: r = 0.8790
+loc <-> total_Op: r = 0.8786
+loc <-> total_Opnd: r = 0.8647
+v(g) <-> iv(g): r = 0.8571
+iv(g) <-> branchCount: r = 0.8569
+v <-> uniq_Opnd: r = 0.8511
+b <-> uniq_Opnd: r = 0.8507
+uniq_Opnd <-> total_Opnd: r = 0.8466
+lOCode <-> uniq_Opnd: r = 0.8437
+n <-> uniq_Opnd: r = 0.8308
+loc <-> branchCount: r = 0.8251
+d <-> total_Op: r = 0.8162
+e <-> lOCode: r = 0.8159
+t <-> lOCode: r = 0.8159
+loc <-> v(g): r = 0.8130
+uniq_Opnd <-> total_Op: r = 0.8112
+n <-> d: r = 0.8061
+v <-> e: r = 0.8038
+v <-> t: r = 0.8038
+b <-> t: r = 0.8037
+e <-> b: r = 0.8037
+lOCode <-> lOBlank: r = 0.8015
+
+EDA INTERPRETATION NOTES
+----------------------------------------------------------------------
+1. The cleaned JM1 dataset contains 8,908 observations and 21 software metrics.
+2. The target distribution should be considered when designing stratified cross-validation.
+3. SMOTE is intentionally NOT applied during EDA.
+4. Outlier identification is descriptive only; no observations are removed by this script.
+5. Pearson correlation is exploratory here. Formal multicollinearity analysis using Pearson correlation and VIF will be performed in the dedicated multicollinearity stage.
+6. No model training or SHAP analysis is performed in this stage.

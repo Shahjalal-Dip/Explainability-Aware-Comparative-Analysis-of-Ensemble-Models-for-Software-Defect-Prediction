@@ -1,0 +1,56 @@
+{
+    "experiment": "RF vs RF-RID SHAP Explanation Comparison",
+    "random_state": 42,
+    "test_dataset": "E:\\Programming\\Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction\\data\\processed\\JM1\\JM1_test.csv",
+    "test_rows": 1782,
+    "shap_sample_size": 300,
+    "background_size": 100,
+    "full_rf_feature_count": 21,
+    "rf_rid_feature_count": 12,
+    "rf_rid_selected_features": [
+        "v(g)",
+        "ev(g)",
+        "iv(g)",
+        "l",
+        "d",
+        "i",
+        "t",
+        "lOComment",
+        "lOBlank",
+        "locCodeAndComment",
+        "uniq_Op",
+        "uniq_Opnd"
+    ],
+    "rf_rid_removed_features": [
+        "loc",
+        "n",
+        "v",
+        "e",
+        "b",
+        "lOCode",
+        "total_Op",
+        "total_Opnd",
+        "branchCount"
+    ],
+    "global_metrics": {
+        "spearman": 0.9790209790209792,
+        "cosine": 0.9718063035254242
+    },
+    "local_metrics": {
+        "spearman": {
+            "mean": 0.8501864801864804,
+            "std": 0.10312151899990145,
+            "median": 0.8741258741258742,
+            "min": 0.46153846153846156,
+            "max": 1.0
+        },
+        "cosine": {
+            "mean": 0.9050402932085508,
+            "std": 0.08362112234857344,
+            "median": 0.9269711185505368,
+            "min": 0.2379071915393921,
+            "max": 0.994022655230908
+        }
+    },
+    "methodological_note": "Full RF SHAP values were restricted to the 12 features retained by RF-RID before calculating explanation consistency. Therefore, both models were compared in the same 12-dimensional feature space."
+}

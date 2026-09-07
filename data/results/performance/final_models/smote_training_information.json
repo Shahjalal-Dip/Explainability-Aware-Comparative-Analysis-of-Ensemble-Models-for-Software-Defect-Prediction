@@ -1,0 +1,11 @@
+{
+    "training_dataset": "JM1_development",
+    "original_samples": 7126,
+    "resampled_samples": 11046,
+    "original_class_0": 5523,
+    "original_class_1": 1603,
+    "resampled_class_0": 5523,
+    "resampled_class_1": 5523,
+    "random_state": 42,
+    "k_neighbors": 5
+}

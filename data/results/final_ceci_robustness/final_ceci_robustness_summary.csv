@@ -1,0 +1,2 @@
+Observed_CECI,Bootstrap_Mean,Bootstrap_SD,95_CI_Lower,95_CI_Upper,95_CI_Width,Relative_CI_Width,Maximum_Leave_One_Out_Difference,Bootstrap_Interpretation,Bootstrap_Repetitions,Random_State
+0.7758763913544101,0.7758621915016447,0.0010547041241639125,0.7737881258803095,0.7778649311251796,0.004076805244870085,0.005254451985261985,0.020105543548444293,Very high bootstrap stability,5000,42

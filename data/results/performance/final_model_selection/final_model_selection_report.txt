@@ -1,0 +1,65 @@
+================================================================================
+STEP 7: FINAL MODEL SELECTION REPORT
+================================================================================
+
+Project: Evaluating SHAP Explanation Consistency in Ensemble Models for Software Defect Prediction
+Dataset: NASA JM1
+
+EXPERIMENTAL DESIGN
+--------------------------------------------------------------------------------
+Data used: Development set only
+Cross-validation: Stratified 5-fold CV
+Training strategy: SMOTE applied within training folds
+Independent test set: NOT USED
+Retraining: NOT performed in Step 7
+
+MODEL SELECTION CRITERIA
+--------------------------------------------------------------------------------
+Primary criterion: F1
+Secondary criterion: MCC
+Supporting criterion: PR-AUC
+Supporting criterion: ROC-AUC
+Accuracy: Not available in Step 6 tuning summary
+
+SELECTED FINAL MODELS
+--------------------------------------------------------------------------------
+
+Rank 1: RF
+  F1       = 0.4308 +/- 0.0151
+  MCC      = 0.2654 +/- 0.0235
+  ROC-AUC  = 0.6953 +/- 0.0101
+  PR-AUC   = 0.4266 +/- 0.0202
+  Training strategy = SMOTE
+  Test set used = NO
+
+Rank 2: XGB
+  F1       = 0.4292 +/- 0.0268
+  MCC      = 0.2428 +/- 0.0389
+  ROC-AUC  = 0.6796 +/- 0.0147
+  PR-AUC   = 0.4118 +/- 0.0227
+  Training strategy = SMOTE
+  Test set used = NO
+
+Rank 3: MLP
+  F1       = 0.4204 +/- 0.0257
+  MCC      = 0.2282 +/- 0.0365
+  ROC-AUC  = 0.6574 +/- 0.0161
+  PR-AUC   = 0.3990 +/- 0.0290
+  Training strategy = SMOTE
+  Test set used = NO
+
+Rank 4: LGBM
+  F1       = 0.3938 +/- 0.0258
+  MCC      = 0.2681 +/- 0.0278
+  ROC-AUC  = 0.6896 +/- 0.0122
+  PR-AUC   = 0.4233 +/- 0.0235
+  Training strategy = SMOTE
+  Test set used = NO
+
+================================================================================
+METHODOLOGICAL NOTE
+================================================================================
+Four final model families are retained for the subsequent comparative SHAP analysis.
+The model with the highest overall predictive ranking is not used to eliminate the other model families because cross-model explanation consistency is a central objective of the research.
+The independent test set remained completely locked throughout model selection.
+The selected configurations will be retrained on the entire development set in Step 8.

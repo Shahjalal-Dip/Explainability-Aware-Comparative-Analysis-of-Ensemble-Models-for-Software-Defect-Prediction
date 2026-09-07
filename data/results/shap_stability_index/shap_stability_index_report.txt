@@ -1,0 +1,30 @@
+STEP 13 — SHAP STABILITY INDEX
+================================================================================
+
+Definition
+--------------------------------------------------------------------------------
+Correlation normalization:
+    normalized = (metric + 1) / 2
+
+Intra-Model Stability Index:
+    IMSI = mean(
+        normalized global Spearman,
+        normalized global cosine,
+        normalized local Spearman,
+        normalized local cosine
+    )
+
+Higher IMSI indicates greater SHAP explanation stability.
+
+RESULTS
+--------------------------------------------------------------------------------
+Model  Global_Spearman  Global_Cosine  Normalized_Global_Spearman  Normalized_Global_Cosine  Global_Stability_Component  Local_Spearman  Local_Cosine  Normalized_Local_Spearman  Normalized_Local_Cosine  Local_Stability_Component     IMSI  IMSI_Rank
+   RF         0.890260       0.982160                    0.945130                  0.991080                    0.968105        0.690463      0.798464                   0.845232                 0.899232                   0.872232 0.920168          1
+  XGB         0.763766       0.987425                    0.881883                  0.993713                    0.937798        0.567196      0.913795                   0.783598                 0.956897                   0.870248 0.904023          2
+  MLP         0.615195       0.942004                    0.807597                  0.971002                    0.889300        0.658168      0.824902                   0.829084                 0.912451                   0.870767 0.880034          3
+ LGBM         0.751688       0.978516                    0.875844                  0.989258                    0.932551        0.462448      0.734706                   0.731224                 0.867353                   0.799289 0.865920          4
+
+IMPORTANT NOTE
+--------------------------------------------------------------------------------
+This is the intra-model stability component only.
+The final overall SSI should be calculated only after the cross-model SHAP consistency results and RF vs RF-RID explanation comparison have been finalized.

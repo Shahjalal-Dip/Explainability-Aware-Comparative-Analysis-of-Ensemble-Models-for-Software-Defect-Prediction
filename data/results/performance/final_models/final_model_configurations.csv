@@ -1,0 +1,5 @@
+Model,Training_Strategy,Random_State,Test_Set_Used,n_estimators,max_depth,max_features,min_samples_leaf,min_samples_split,learning_rate,subsample,colsample_bytree,num_leaves,min_child_samples,hidden_layer_sizes,activation,alpha,learning_rate_init
+RF,SMOTE,42,False,300,10,sqrt,1,5,,,,,,,,,
+XGB,SMOTE,42,False,200,3,,,,0.01,0.8,0.8,,,,,,
+LGBM,SMOTE,42,False,200,20,,,,0.01,,,63,30,,,,
+MLP,SMOTE,42,False,,,,,,,,,,,"(50,)",tanh,0.01,0.001

@@ -1,0 +1,18 @@
+{
+    "step": "Step 13 \u2014 SHAP Stability Index",
+    "metric_normalization": "(metric + 1) / 2",
+    "metrics": [
+        "Global_Spearman",
+        "Global_Cosine",
+        "Local_Spearman",
+        "Local_Cosine"
+    ],
+    "index": "IMSI = mean of four normalized stability metrics",
+    "models": [
+        "LGBM",
+        "MLP",
+        "RF",
+        "XGB"
+    ],
+    "note": "Intra-model component only; final overall SSI requires finalized cross-model consistency."
+}
